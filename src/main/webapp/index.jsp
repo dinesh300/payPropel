@@ -167,7 +167,7 @@
 	            <h5 ><small>Don't have an account?</small></h5>
 	          </li>
 	          <li class="list-inline-item">
-	            <a href="/billpay/components/common/register.jsp" class="btn btn-sm btn-block" style="background: #a29b9b; color: Whitesmoke">Register!</a>
+	            <a href="#" class="btn btn-sm btn-block" style="background: #a29b9b; color: Whitesmoke">Register!</a>
 	          </li>
 	        </ul>
 	        <!-- Call to action -->
