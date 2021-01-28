@@ -19,6 +19,19 @@
   	<description></description>
   	<servlet-class>org.expleo.payPropel.servlet.UserServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>Validate</servlet-name>
+  	<display-name>Validate</display-name>
+  	<description></description>
+  	<servlet-class>org.expleo.payPropel.servlet.Validate</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>GenerateServlet</servlet-name>
+  	<display-name>GenerateServlet</display-name>
+  	<description></description>
+  	<servlet-class>org.expleo.payPropel.servlet.GenerateServlet</servlet-class>
+  </servlet>
  
   <servlet-mapping>
   	<servlet-name>LoginServlet</servlet-name>
@@ -28,6 +41,14 @@
   <servlet-mapping>
   	<servlet-name>UserServlet</servlet-name>
   	<url-pattern>/UserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Validate</servlet-name>
+  	<url-pattern>/Validate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>GenerateServlet</servlet-name>
+  	<url-pattern>/GenerateServlet</url-pattern>
   </servlet-mapping>
   
 </web-app>

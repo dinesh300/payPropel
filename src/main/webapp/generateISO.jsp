@@ -17,6 +17,12 @@
 	  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	  <link rel="icon" href="assets/images/PPfavicon.png" type="image/x-icon">
 	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  
 	<script type="text/javascript">
  window.onload = function() {
     document.getElementById('ifYes').style.display = 'none';
@@ -27,7 +33,7 @@ function yesnoCheck() {
     if (document.getElementById('yesCheck').checked) {
         document.getElementById('ifYes').style.display = 'block';
         document.getElementById('ifNo').style.display = 'none';
-        $('.colors').hide();
+        $('.international').hide();
         
     } 
     else if(document.getElementById('noCheck').checked) {
@@ -42,7 +48,7 @@ function selectScheme() {
 
 	 $(function() {
 	        $('#selectedScheme').change(function(){
-	            $('.colors').hide();
+	            $('.international').hide();
 	            $('#' + $(this).val()).show();
 	        });
 	    });
@@ -63,7 +69,7 @@ function selectVersion() {
 
 	 $(function() {
 	        $('#selectedVersion').change(function(){
-	            $('.colors').hide();
+	            $('.international').hide();
 	            $('#' + $(this).val()).show();
 	        });
 	    });
@@ -81,7 +87,18 @@ function selectVersionDomestic() {
 	    
 }
 
+function generateXML() {
+	 $(function() {
 
+		$('#generate').click(function () {
+			$('.note').hide();
+		    $('#' + $(this).val()).show();
+		       
+		   });
+		});
+				 
+		 
+}
 
 </script>
 
@@ -121,6 +138,13 @@ function selectVersionDomestic() {
 	    .clr-darkslategrey{color: darkslategrey}
 	    .clr-black{color: black!important}
 	    .mht-150{min-height: 150px}
+	    
+		@media screen and (max-width: 1366px) and (min-width: 600px) {
+		  body{
+		  	zoom:75%!important
+		  }
+		}
+			    
 	  </style>
 	  
 	    <%
@@ -129,7 +153,7 @@ function selectVersionDomestic() {
 	    %>
 	    
 	</head>
-	<body style="background: whitesmoke">
+	<body >
 	
 	
 	  <div class="container-fluid">
@@ -180,7 +204,7 @@ function selectVersionDomestic() {
 		  		
 		  		<nav aria-label="breadcrumb">
 				  <ol class="breadcrumb">
-				    <li class="breadcrumb-item"><a href="#">Home</a></li>
+				    <li class="breadcrumb-item"><a href="/payPropel/launch.jsp">Home</a></li>
 				    <li class="breadcrumb-item active" aria-current="page">Generate ISO Message</li>
 				  </ol>
 				</nav>
@@ -190,7 +214,7 @@ function selectVersionDomestic() {
 						<p style="color:steelblue">Select your options:</p>
 					</div>
 					<div class="col-2">
-						<input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck" style="color: green"/ > <strong>Domestic</strong>
+						<input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck" style="color: green"/> <strong>Domestic</strong>
 						
 					</div>
 					<div class="col-2">
@@ -234,7 +258,7 @@ function selectVersionDomestic() {
 								    <div class="form-group">
 								      <select class="form-control" id="selectedScheme" onclick="javascript:selectScheme();">
 								        <option selected>Choose your options</option>
-								        <option value="swift-ms">Swift-MS</option>
+								        <option value="swift-ms">SWIFT</option>
 								      
 								      </select>
 								    </div>
@@ -247,7 +271,7 @@ function selectVersionDomestic() {
 			  
 			  <div class="row justify-content-center" >
 			  	
-			  	<div class="col-12 pad-10" id="swift-ms" class="colors" style="display:none"> 
+			  	<div class="col-12 pad-10" id="swift-ms" class="international" style="display:none"> 
 						
 						    <div class="card  " style="border-radius:15px; background: white " >
 						      <div class="card-body align-items-left  justify-content-left">
@@ -295,12 +319,12 @@ function selectVersionDomestic() {
 			  	</div>
 			  
 			  
-			  <div class="col-12 pad-10" id="ver003" class="colors" style="display:none"> 
+			  <div class="col-12 pad-10" id="ver003" class="international" style="display:none"> 
 						
-						    <div class="card  " style="border-radius:15px; background: white " >
+						   <div class="card  " style="border-radius:15px; background: white " >
 						      <div class="card-body align-items-left  justify-content-left">
 						        
-								 <h5> <strong>Detail</strong></h5>
+								 <h5 class="pad-20"> Transaction Details:</h5>
 								 
 						        <div class="row justify-content-left  margin-0 pad-0">
 						        	<div class="col-12">
@@ -340,10 +364,28 @@ function selectVersionDomestic() {
 											  <div class="col-2 text-end">
 											    	<label for="Currency" >Currency</label>
 											    </div>
-											    <div class="col-3">
+											    <div class="col-1" >
+											      
+											      
+											      <form>
+													    <div class="form-group" style="max-width: 80px; border: 1px solid lightgrey; border-radius: 10px">
+													      <select class="form-control" id="selectedType" > <strong>
+													        <option selected><strong>CUR</strong></option>
+													        <option value="pain001">INR</option>
+													      	<option value="pain008">USD</option>
+															<option value="pacs002">EUR</option>
+													 		<option value="camt056">OMR</option></strong>
+													      </select>
+													    </div>
+													  </form>
+													  
+													 
+											    </div>
+											    <div class="col-1 text-center">
 											      <input type="text" class="form-control" id="currency" >
 											    </div>
-												 <div class="col-2 text-end">
+											    
+												 <div class="col-3 text-end">
 												    <label  for="valueDate" >Value Date</label>
 												    </div>
 												  <div class="col-3">
@@ -355,15 +397,18 @@ function selectVersionDomestic() {
 										    <div class="form-group row justify-content-center pad-20">
 											  <div class="col-2 text-end">
 											    	<button type="button" class="btn btn-secondary btn-sm btn-block">Cancel</button>
-
 											    </div>
-											    <div class="col-2">
-													<button type="button" class="btn btn-primary btn-sm btn-block">Generate</button>											      
-											    </div>
-												 
-										    </div>
+											     <div class="col-2">
+											       <a href="GeneratedFile.xml" download>
+											       		
+															<button type="submit" id="generate" class="btn btn-info btn-sm btn-block" >Generate</button>
+												    	
+												    </a>
+												</div>
+											</div>
 									   </form>
 						        	</div>
+						        	
 						        </div>
 						  </div>
 						</div>
@@ -428,7 +473,7 @@ function selectVersionDomestic() {
 						    <div class="card  " style="border-radius:15px; background: white " >
 						      <div class="card-body align-items-left  justify-content-left">
 						        
-								 <h5> <strong>Detail</strong></h5>
+								 <h5 class="pad-20"> Transaction Details:</h5>
 								 
 						        <div class="row justify-content-left  margin-0 pad-0">
 						        	<div class="col-12">
@@ -468,10 +513,28 @@ function selectVersionDomestic() {
 											  <div class="col-2 text-end">
 											    	<label for="Currency" >Currency</label>
 											    </div>
-											    <div class="col-3">
+											    <div class="col-1" >
+											      
+											      
+											      <form>
+													    <div class="form-group" style="max-width: 80px; border: 1px solid lightgrey; border-radius: 10px">
+													      <select class="form-control" id="selectedType" > <strong>
+													        <option selected><strong>CUR</strong></option>
+													        <option value="pain001">INR</option>
+													      	<option value="pain008">USD</option>
+															<option value="pacs002">EUR</option>
+													 		<option value="camt056">OMR</option></strong>
+													      </select>
+													    </div>
+													  </form>
+													  
+													 
+											    </div>
+											    <div class="col-1 text-center">
 											      <input type="text" class="form-control" id="currency" >
 											    </div>
-												 <div class="col-2 text-end">
+											    
+												 <div class="col-3 text-end">
 												    <label  for="valueDate" >Value Date</label>
 												    </div>
 												  <div class="col-3">
@@ -483,26 +546,31 @@ function selectVersionDomestic() {
 										    <div class="form-group row justify-content-center pad-20">
 											  <div class="col-2 text-end">
 											    	<button type="button" class="btn btn-secondary btn-sm btn-block">Cancel</button>
-
 											    </div>
-											    <div class="col-2">
-													<button type="button" class="btn btn-primary btn-sm btn-block">Generate</button>											      
-											    </div>
-												 
-										    </div>
+											     <div class="col-2">
+											       <a href="GeneratedFile.xml" download>
+											       		
+															<button type="submit" id="generate" class="btn btn-info btn-sm btn-block" >Generate</button>
+												    	
+												    </a>
+												</div>
+											</div>
 									   </form>
 						        	</div>
+						        	
 						        </div>
 						  </div>
 						</div>
 				  	</div>
 			  </div>
 			
-			
-			
-			
+ 
 	 	 </div>
 	   </div>
 	   </div>
 	</body>
 </html>   
+														
+														
+														
+												

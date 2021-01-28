@@ -52,7 +52,10 @@
 				<div class="col-xl-8 col-lg-5 col-md-6 col-sm-6 col-xs-7">
 				<!-- Content -->
               <h6 class="font-weight-bold text-uppercase mt-3 mb-4 clr-lightgrey" >About Pay Propel</h6>
-              <p class="h6 "  style="color:#a7a7a7" ><small>BOI Bill Pay is an integrated, inter operable and dedicated bill payment solution that allows Bank Of India customers to make electricity,water,gas,mobile bill payments and quick recharge for DTH and Prepaid Mobile using BOI Debit Card.Payment option such as minimum, full, partial, excess, cut off (specified payment duration) and penalty payment (payment after due date).
+              <p class="h6 "  style="color:#a7a7a7" ><small>Teams involved in payments need a quick and easy way to check bank payments files. They need to check the technical file format as well as conformance to bank-specific business rules.
+
+				
+
               </small>
               </p>
 				

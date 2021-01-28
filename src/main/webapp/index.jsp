@@ -69,6 +69,25 @@
 			         -o-transform:skew(8deg) rotate(3deg);
 			            transform:skew(8deg) rotate(3deg);
 			}
+			
+			
+			/*==================================================
+ * Effect 1
+ * ===============================================*/
+.effect1{
+  -webkit-box-shadow: 2px 2px 1px 1px lightgrey;
+     -moz-box-shadow: 2px 2px 1px 1px lightgrey;
+          box-shadow: 2px 2px 1px 1px lightgrey;
+}
+			
+			
+
+@media screen and (max-width: 1366px) and (min-width: 600px) {
+  body{
+  	zoom:75%!important
+  }
+}
+			
 	  </style>
     
       <%   
@@ -86,14 +105,18 @@
 </head>
   <body >
 	 
-	  <div class="container-fluid pad-top-50">
-	  <div class="row justify-content-center">
-	 	<div class="col-xl-3 col-lg-5 col-md-6 col-sm-6 col-xs-7">
- 		<div class="card text-center " style="border-radius:15px;" >
+	  <div class="container-fluid pad-top-50 ">
+	  <div class="row justify-content-center ">
+	 	<div class="col-xl-3 col-lg-6 col-md-6 col-md-6 col-sm-6 col-xs-7 ">
+ 		<div class="card text-center effect1 " style="border-radius: 15px"  >
 		  <div class="card-header" >
 		    <img src="<%=request.getContextPath()%>/assets/images/PPlogo.png" alt="Billpay logo"/>
+		    <small id="emailHelp" class="form-text text-muted p" style="padding-bottom: 15px">Helping the World solve 20022 Needs.</small>
+		           
 		  </div>
-		  <div class="card-body text-left">
+		  
+		  
+		  <div class="card-body text-left ">
 		    <h4 class="card-title margin-0 " style="color: #205b8c" > <strong>Login</strong></h4>
 		      <small id="emailHelp" class="form-text text-muted p" style="padding-bottom: 15px">Please login with your username and password.</small>
 		      
@@ -109,12 +132,12 @@
 			     
 			     
 			    <label for="exampleInputEmail1">Username</label>
-			    <input type="text" class="form-control" id="username" name="username" placeholder="Username" aria-describedby="inputGroupPrepend2" >
+			    <input type="text" class="form-control" id="username" name="username"  aria-describedby="inputGroupPrepend2" >
 			    
 			  </div>
 			  <div class="form-group">
 			    <label for="exampleInputPassword1">Password</label>
-			    <input type="Password" class="form-control" id="password" name="password" placeholder="Password" aria-describedby="inputGroupPrepend2" >
+			    <input type="Password" class="form-control" id="password" name="password" aria-describedby="inputGroupPrepend2" >
 			  </div>
 			  <div class="form-group form-check">
 			    <input type="checkbox" class="form-check-input" id="exampleCheck1">

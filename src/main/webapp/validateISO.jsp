@@ -60,6 +60,7 @@ function selectScheme() {
   	 if (showOrHide==null){
   		 showOrHide="none";
   	 }
+  	String username=(String)request.getAttribute("username"); 
 	%> 
 	
 	  <!-- Custom styles -->
@@ -86,15 +87,19 @@ function selectScheme() {
 	    .clr-darkslategrey{color: darkslategrey}
 	    .clr-black{color: black!important}
 	    .mht-150{min-height: 150px}
+	    
+	    @media screen and (max-width: 1366px) and (min-width: 600px) {
+		  body{
+		  	zoom:75%!important
+		  }
+		}
+			    
 	  </style>
 	  
-	    <%
-	    HttpSession sess = request.getSession(true);
-	    String username=(String)request.getAttribute("username"); 
-	    %>
+	   
 	    
 	</head>
-	<body style="background: whitesmoke">
+	<body>
 	
 	
 	  <div class="container-fluid">
@@ -145,16 +150,12 @@ function selectScheme() {
 		  		
 		  		<nav aria-label="breadcrumb">
 				  <ol class="breadcrumb">
-				    <li class="breadcrumb-item"><a href="#">Home</a></li>
+				    <li class="breadcrumb-item"><a href="/payPropel/launch.jsp">Home</a></li>
 				    <li class="breadcrumb-item active" aria-current="page">Validate ISO Message</li>
 				  </ol>
 				</nav>
 				
 			
-			
-			
-					  
-			  
 			  <div class="row justify-content-center" >
 			  	
 			  	<div class="col-10 pad-10" > 
@@ -162,18 +163,38 @@ function selectScheme() {
 						    <div class="card  " style="border-radius:15px; background: white " >
 						      <div class="card-body align-items-left  justify-content-left">
 						        <div class="row justify-content-center  margin-0 pad-0">
-						         
-									<div class="col-3 text-left">
-									<p class=" clr-black" ><strong>Please Select the file to validate </strong></p>
-									</div>
-									<div class="col-5">
-										<form>
-										  <div class="custom-file">
-										    <input type="file" class="custom-file-input" id=file>
-										    <label class="custom-file-label" for="customFile">Choose file</label>
-										  </div>
+						         <div class="col-12 text-left">
+						         	<h4>File Upload:</h4>
+						         </div>
+								<div class="col-3 text-left">
+								<p class=" clr-black" >Please Select the file for validate.</p>
+								</div>
+								<div class="col-9">
+								  <form method="post" action="Validate" enctype="multipart/form-data">
+									  <div class="custom-file">
+									    <input type="file" class="custom-file-input" name="file" id=file>
+									    <label class="custom-file-label" for="customFile">Choose file</label>
+									  </div>
+										  
+											
+											 
+										  <div class="col-9">
+											<div class="row justify-content-center" style="padding: 0">
+												
+												 <div class="col-3 pad-top-50">
+											    	<button type="button"  class="btn btn-secondary btn-sm btn-block">Cancel</button>
+
+											    </div>
+											    <div class="col-3 pad-top-50">
+													<button type="submit" class="btn btn-sm btn-block btn-info" > Validate </button>										      
+											    </div>
+											    </div>
+											    
+											</div>
 										</form>
 										
+									
+											
 										<script type="text/javascript">
 										// Add the following code if you want the name of the file appear on select
 										$(".custom-file-input").on("change", function() {
@@ -182,33 +203,14 @@ function selectScheme() {
 										});
 
 
-
-										 function fileValidation() { 
-									            var fileInput =  
-									                document.getElementById('file'); 
-									              
-									            var filePath = fileInput.value; 
-									          
-									            // Allowing file type 
-									            var allowedExtensions =  
-									/(\.doc|\.docx|\.odt|\.pdf|\.tex|\.txt|\.rtf|\.wps|\.wks|\.wpd)$/i; 
-									              
-									            if (!allowedExtensions.exec(filePath)) { 
-									                alert('Invalid file type'); 
-									                fileInput.value = ''; 
-									                return false; 
-									            }  
-									        } 
 										</script>
-									
-							
-									</div>
-									<div class="col-4">
-										<button type="button" class="btn btn-sm btn-danger" onclick="return fileValidation()"> Validate </button>
-									</div>
-									
+								
+								 	</div>
 								 </div>
-							 
+							   <div class="row justify-content-center pad-top-50" >
+									 	 <div class= " col-5 <%=alertType%>" id="<%=alertId%>" role="alert" style="<%=cssDesign%>; display:<%=showOrHide%>">
+											<p>	<Strong><%=isAuth%></Strong> <%=message%></p>
+										</div>
 						  </div>
 						</div>
 					</div>

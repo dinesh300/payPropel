@@ -28,7 +28,6 @@
 	    .pad-5{padding: 5px}
 	    .pad-10{padding: 10px}
 	    .pad-20{padding: 20px}
-	    .cl-white{background: white}
 	    .clr-lightgrey{color: lightgrey}
 	    .clr-whitesmoke{color: whitesmoke}
 	    .form-control:focus {
@@ -64,6 +63,14 @@
   -ms-transform: rotate(-3deg);
   transform: rotate(-3deg);
 }
+
+
+@media screen and (max-width: 1366px) and (min-width: 600px) {
+  body{
+  	zoom:75%!important
+  }
+}
+
 	  </style>
 	  
 	    <%
@@ -74,7 +81,7 @@
 	    %>
 	    
 	</head>
-	<body style="background: whitesmoke">
+	<body >
 	
 	
 	  <div class="container-fluid">
@@ -114,15 +121,17 @@
 		  		<div class="row pad-10" >
 		  			<p class="h5" style="color: #1c5686"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-earmark-text-fill" viewBox="0 0 16 16">
 					  <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM4.5 9a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM4 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 1 0-1h4a.5.5 0 0 1 0 1h-4z"/>
-					</svg> XML Data Validation</p>
+					</svg> Simplified ISO 20022</p>
 
 		  		</div>
 		  		<hr />
-		  		<p >
-		  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Teams involved in payments need a quick and easy way to check bank payments files. They need to check the technical file format as well as conformance to bank-specific business rules.
-
-				The XMLdation Validator® is an easy to use Service for checking payments files. No training is needed, and it can be used as and when the need arises. The Validator works for hundreds of different variations of the payment file formats used at banks.
-		  		</p>
+		  	
+		  		<ul style="line-height:180% ; content: 'âœ“'; ">
+				  <li>Easy implement and simulate own XML transactions</li>
+				  <li> Use any connection like Web Service, HTTP, TCP/IP, SQL or just files</li>
+				  <li>Configure test cases in Excel / AutoQ BA, Run with a click from the UI	</li>
+				</ul>
+		  		
 		  		
 		  	</div>
 		  	
@@ -132,7 +141,7 @@
 					
 					<div class="col-3 " >
 						<div class="row text-center h-100">
-						  <div class="col text-center my-auto">
+						  <div class="col text-center my-auto ">
 						  <a href="generateISO.jsp" style="color: steelblue">
 						    <div class="card card-block d-flex mht-150 effect3" style="border-radius:15px; background: whitesmoke " >
 						      <div class="card-body align-items-center d-flex justify-content-center">
@@ -221,6 +230,21 @@
 						    <div class="card card-block d-flex mht-150 effect3" style="border-radius:15px; background: whitesmoke " >
 						      <div class="card-body align-items-center d-flex justify-content-center">
 						        <h5 class="card-title">Audit Trails</h5>
+						      </div>
+						    </div>
+						   </a>
+						  </div>
+						</div>
+					</div>
+					
+					
+					<div class="col-3 pad-top-50" >
+						<div class="row text-center h-100">
+						  <div class="col text-center my-auto">
+						  <a href="#" style="color: steelblue">
+						    <div class="card card-block d-flex mht-150 effect3" style="border-radius:15px; background: whitesmoke " >
+						      <div class="card-body align-items-center d-flex justify-content-center">
+						        <h5 class="card-title">MT - MX</h5>
 						      </div>
 						    </div>
 						   </a>
