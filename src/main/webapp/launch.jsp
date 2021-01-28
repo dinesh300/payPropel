@@ -1,5 +1,6 @@
 
 <!DOCTYPE html>
+ 
 <html lang="en">
 	<head>
 	  <meta charset="UTF-8">
@@ -73,12 +74,7 @@
 
 	  </style>
 	  
-	    <%
-	    
-	    String username=(String)session.getAttribute("username"); 
-	    
-	    
-	    %>
+	   
 	    
 	</head>
 	<body >
@@ -86,29 +82,7 @@
 	
 	  <div class="container-fluid">
 	  
-	    <div class="row justify-content-left" style="padding: 10px">
-	    	<div class="col">
-	    		<img src="<%=request.getContextPath()%>/assets/images/PPlogo.png" alt="Billpay logo"/>
-	    	</div>
-	    	
-	    	<div class="col align-self-end" >
-	    		<div class="row justify-content-end" style="padding-right: 20px"  >
-	    			<div class="col-10 align-self-center text-end" >
-	    				<div class="row justify-content-end" style="padding: 10px">
-	    					<h6>Welcome, <strong><%=username %></strong> </h6>
-	    				</div>	
-	    			</div>
-	    			
-	    			<div class="col-2 align-self-center" style="padding: 8px" >
-		    			<button type="button" class="btn btn-sm btn-danger"> Logout</button>
-	    			</div>
-	    		
-					
-	    		</div>
-	    	</div>
-	    	
-	  	</div>  	
-	   </div>
+	   <jsp:include page="components/common/header.jsp"></jsp:include>
 	  
 	      <!-- Navbar content -->
 	 	<nav class="navbar navbar-expand-xl" style="background-color: #0d2f76 !important;border-top: 3px solid #2e94e7 ">
